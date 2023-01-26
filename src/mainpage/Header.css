@@ -1,0 +1,14 @@
+.navbar{
+     background-color: #5C3994;
+}
+
+.center {
+     display: flex;
+     justify-content: 'center';
+     align-items: 'center';
+ }
+
+
+body{
+     background: rgba(128, 128, 128, 0.174);
+}
