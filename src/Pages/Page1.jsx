@@ -83,85 +83,9 @@ const Page1 = () => {
       <section>
         <h1 className="text-center mt-5 mb-3 ">Assumed Configuration</h1>
         <div className=" container">
-          {/* Card-1 */}
 
-          {/* <Card className="mx-auto shadow m-4" style={{ width: "700px" }}>
-            <Row>
-              <Col>
-                <img
-                  src="http://costfinder.consdeployer.com/assets/roomselection/livingroom.PNG"
-                  alt=""
-                  style={{ width: "200px", height: "200px" }}
-                  className="mx-5"
-                />
-              </Col>
-              <Col>
-                <h2 className="my-5">Living Room</h2>
-              </Col>
-              <Col sm={2}>
-                <h2 className="my-5">1</h2>
-              </Col>
-            </Row>
-          </Card>
 
-          <Card className="mx-auto shadow m-4" style={{ width: "700px" }}>
-            <Row>
-              <Col>
-                <img
-                  src="http://costfinder.consdeployer.com/assets/roomselection/bedroom.png"
-                  alt=""
-                  style={{ width: "200px", height: "200px" }}
-                  className="mx-5"
-                />
-              </Col>
-              <Col>
-                <h2 className="my-5">Master Bedroom</h2>
-              </Col>
-              <Col sm={2}>
-                <h2 className="my-5">1</h2>
-              </Col>
-            </Row>
-          </Card>
-
-          <Card className="mx-auto shadow m-4" style={{ width: "700px" }}>
-            <Row>
-              <Col>
-                <img
-                  src="http://costfinder.consdeployer.com/assets/roomselection/bathroom.png"
-                  alt=""
-                  style={{ width: "200px", height: "200px" }}
-                  className="mx-5"
-                />
-              </Col>
-              <Col>
-                <h2 className="my-5">Master Bathroom</h2>
-              </Col>
-              <Col sm={2}>
-                <h2 className="my-5">1</h2>
-              </Col>
-            </Row>
-          </Card>
-
-         
-          <Card className="mx-auto shadow m-4" style={{ width: "700px" }}>
-            <Row>
-              <Col>
-                <img
-                  src="http://costfinder.consdeployer.com/assets/roomselection/kitchen.png"
-                  alt=""
-                  style={{ width: "200px", height: "200px" }}
-                  className="mx-5"
-                />
-              </Col>
-              <Col>
-                <h2 className="my-5">Kitchen</h2>
-              </Col>
-              <Col sm={2}>
-                <h2 className="my-5">1</h2>
-              </Col>
-            </Row>
-          </Card> */}
-
+          {/* Home Cards */}
           {home.map((item, index) => (
             <HomeCard key={index} item={item} />
           ))}
