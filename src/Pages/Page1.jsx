@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Page.css";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
@@ -85,7 +85,7 @@ const Page1 = () => {
         <div className=" container">
           {/* Card-1 */}
 
-          <Card className="mx-auto shadow m-4" style={{ width: "700px" }}>
+          {/* <Card className="mx-auto shadow m-4" style={{ width: "700px" }}>
             <Row>
               <Col>
                 <img
@@ -160,7 +160,7 @@ const Page1 = () => {
                 <h2 className="my-5">1</h2>
               </Col>
             </Row>
-          </Card>
+          </Card> */}
 
           {home.map((item, index) => (
             <HomeCard key={index} item={item} />

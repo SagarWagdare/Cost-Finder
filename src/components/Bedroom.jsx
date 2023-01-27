@@ -13,7 +13,7 @@ const Bedroom = () => {
   const bedroom = {
     image:
       "http://costfinder.consdeployer.com/assets/roomselection/bedroom.png",
-    title: `Bedroom ${count + 1}`,
+    title: ` Bedroom ${count + 1}`,
     number: "1",
   };
   const increment = () => {

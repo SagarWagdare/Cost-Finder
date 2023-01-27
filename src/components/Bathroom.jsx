@@ -9,12 +9,7 @@ const Bathroom = () => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
 
-  const bathroom = {
-    image:
-      "http://costfinder.consdeployer.com/assets/roomselection/bathroom.png",
-    title: `Bathroom ${count + 1}`,
-    number: "1",
-  };
+  console.log(count);
   const increment = () => {
     setCount(count + 1);
   };
@@ -25,6 +20,13 @@ const Bathroom = () => {
     } else {
       return count;
     }
+  };
+
+  const bathroom = {
+    image:
+      "http://costfinder.consdeployer.com/assets/roomselection/bathroom.png",
+    title: ` Bathroom ${count + 1}`,
+    number: "1",
   };
 
   return (
@@ -52,7 +54,8 @@ const Bathroom = () => {
                   className=" btn bg-primary"
                   onClick={() => {
                     dispatch(bathroomIncrement(bathroom));
-                    increment();
+                   console.log(bathroom);  
+                   increment();
                   }}
                 >
                   +
@@ -67,3 +70,7 @@ const Bathroom = () => {
 };
 
 export default Bathroom;
+
+
+
+

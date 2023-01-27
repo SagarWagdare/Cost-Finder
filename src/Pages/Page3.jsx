@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const Page3 = () => {
   const home = useSelector((e) => e.home.house);
-
   return (
     <>
       <section>
@@ -27,23 +26,13 @@ const Page3 = () => {
           <Card style={{ width: "50rem" }} className=" shadow mx-2 border-0">
             <Card.Body>
               <p className="display-6 text-center">Scope Wise Estimate</p>
-              <Row>Living Room</Row>
-               
-                <Col>Master Bedroom</Col>
-                <Col>1</Col>
-                <Col>Master Bathroom</Col>
-                <Col>1</Col>
-            
-            
-                <Row>Kitchen</Row>
-                <Col>1</Col>
-              
-            {home.map((item) => (
+             
+            {home.map((item ,index) => (
 
             <>
             
-            <Col>{item.title}</Col>
-                <Col>{item.number}</Col>
+            <Col key={index}>{item.title}</Col>
+             
             </>
                 
             

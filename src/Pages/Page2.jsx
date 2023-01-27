@@ -55,9 +55,9 @@ const Page2 = () => {
                   </Form>
                 </Col>
               </Row>
-              {home.map((item) => (
-                <Row>
-                  <Col sm={8}>{item.title}</Col>
+              {home.map((item,index) => (
+                <Row key={index}>
+                  <Col  sm={8}>{item.title}</Col>
                   <Col sm={3}>
                     {" "}
                     <Form>
@@ -133,7 +133,7 @@ const Page2 = () => {
                     to="/page3"
                     className="btn btn-success btn-lg  px-2 py-2 m-2"
                   >
-                    Get Detailed Estimate<i class="fa-solid fa-database"></i>
+                    Get Detailed Estimate<i className="fa-solid fa-database"></i>
                   </Link>
                 </div>
               </Card>
