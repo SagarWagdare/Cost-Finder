@@ -12,6 +12,14 @@ import { useSelector } from "react-redux";
 import Page2Card from "./Page2Card";
 
 const Page2 = () => {
+
+  const [livingRoom,setLivingRoom] = useState(false);
+
+  const livingRoomToggle = ()=>{
+    if(livingRoom === false){
+      setLivingRoom()
+    }
+  }
   const home = useSelector((e) => e.home.house);
 
   const [show, setShow] = useState(false);
@@ -20,9 +28,6 @@ const Page2 = () => {
   const handleShow = () => setShow(true);
 
   // const [checkID, setCheckID] = useState("livingroom");
-  // const arr = home.filter((room, index) => {
-  //   return room.id === setID ? <HomeCard key={index} room={room} /> : null;
-  // });
 
   return (
     <>
@@ -30,7 +35,7 @@ const Page2 = () => {
         <Row className="mt-4 mx-3">
           <div className="col-lg-3  mb-5">
             <Card className="p-3 shadow border-0">
-              {home.map((room, index) => {
+              {/* {home.map((room, index) => {
                 return (
                   <div key={index} className="d-flex justify-content-around">
                     <label
@@ -49,7 +54,51 @@ const Page2 = () => {
                     </div>
                   </div>
                 );
-              })}
+              })} */}
+              {home
+                .filter((room) => room.id === 1)
+                .map((item,index) => (
+                  <Row key={index}>
+                    <Col sm={8}>{item.title}</Col>
+                    <Col><div className="form-check form-switch">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                    
+                      />
+                    </div></Col>
+                  </Row>
+                ))}
+
+              {home
+                .filter((room) => room.id === 2)
+                .map((item) => (
+                 <Row>
+                  <Col sm={8}>{item.title}</Col>
+                  <Col>  <div className="form-check form-switch">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                    
+                      />
+                    </div></Col>
+                 </Row>
+                ))}
+
+              {home
+                .filter((room) => room.id === 3)
+                .map((item) => (
+                  <Row>
+                  <Col sm={8}>{item.title}</Col>
+                  <Col><div className="form-check form-switch">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                  
+                    />
+                  </div></Col>
+                </Row>
+                ))}
             </Card>
           </div>
 

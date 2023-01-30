@@ -1,53 +1,81 @@
 import React, { useState } from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
+import { useSelector } from 'react-redux';
+import HomeCard from '../components/HomeCard';
+import { setID } from '../redux/reducer';
+import Flooring from './Flooring';
+import Walls from './Walls';
 
 const Page2Card = () => {
-    const [card, setCard] = useState(false);
+  const home = useSelector((e) => e.home.house);
+
+
+  // const arr = home.filter((room, index) => {
+  //   return room.id === setID ? <HomeCard key={index} room={room} /> : null;
+  // });
+    const [card, setCard] = useState(true);
 
   const clicked = () => {
-    if (card === false) {
-      setCard(true);
-    } else {
+    if (card === true) {
       setCard(false);
-      setShowImg(false)
+    } else {
+      setCard(true);
+      setFloorImg(false)
     }
   };
 
-  const [showImg,setShowImg] = useState(false);
+  const [floorImg,setFloorImg] = useState(false);
+
+  const [showWallsImg,setShowWallsImg] = useState(false);
 
   const flooringImg = ()=>{
-       if(showImg===false){
-    setShowImg(true);
+       if(floorImg===true){
+    setFloorImg(false);
        }
 
        else  {
-        setShowImg(false);
+        setFloorImg(true);
        }
        
   }
 
-  console.log(showImg);
+  
+  const wallsImg = ()=>{
+    if(showWallsImg===false){
+      setShowWallsImg(true);
+    }
+
+    else  {
+      setShowWallsImg(false);
+    }
+    
+}
+
+  console.log(floorImg);
   return (
     <div>
          <div className="col-lg-6 mb-5">
-            {/* {arr.map((room, index) => {
-              return <HomeCard key={index} room={room} />;
-              
-            })} */}
+          
 
             {card ? (
               <Card className="shadow" style={{ width: "750px" }}>
-                <img
-                  src="http://costfinder.consdeployer.com/assets/productselection/livingroombg.jpg"
-                  alt=""
-                  className="p-4"
-                />
-                 <Col className="text-center text-muted p-3">
+                 <Col className="text-center text-muted p-2">
                 <i class="fa-solid fa-arrow-right px-3"></i>
-                  <input type="checkbox" onClick={() => clicked()} active />
+                  <input type="checkbox" onClick={() => clicked()}  />
                   Enable Living Room
                   <i class="fa-solid fa-arrow-left px-3"></i>
                 </Col>
+                <img
+                  src="http://costfinder.consdeployer.com/assets/productselection/livingroombg.jpg"
+                  alt=""
+                  className="p-3"
+                />
+                
+                 {/* {
+                  home.map((img)=>{
+                     <img src={img.cover} alt="" />
+                  })
+                 } */}
 
                 <h5 className="text-muted mx-3">
                 <i className="fa-solid fa-person-circle-question p-2 text-success"></i>How would you like to spend on this room?
@@ -64,10 +92,10 @@ const Page2Card = () => {
               </Card>
             ) : (
               <Card className="shadow" style={{ width: "750px" }}>
-                <Col className="text-center text-muted p-3">
-                <i class="fa-solid fa-arrow-right px-3"></i>
+                <Col className="text-center text-muted p-3 ">
+                <i class="fa-solid fa-arrow-right px-2"></i>
                   <input type="checkbox" onClick={() => clicked()} active />
-                  Disable Living Room
+                  Uncheck Living Room
                   <i class="fa-solid fa-arrow-left px-3"></i>
                 </Col>
 
@@ -80,30 +108,22 @@ const Page2Card = () => {
                   <Col><input type="radio" />  Lavish</Col>
 
                   <div className=" p-4">
-                    <div className="container-fluid p-1 border m-2">
+                    <div className="container-fluid p-1 border m-2 d-block">
 
                       <input type="checkbox" onClick={()=>flooringImg()}/> Flooring
                       
                       {
-                        showImg ? <Row className='p-3'>
-                          <Col>
-                          <img src="http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/vitrified.png" alt="" 
-                          style={{width:"200px",height:"200px"}}/>
-                          </Col>
-                          <Col>
-                          <img src="http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/wooden.png" alt="" 
-                          style={{width:"200px",height:"200px"}}/>
-                          </Col>
-                          <Col>
-                          <img src="http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/italian.png" alt="" 
-                          style={{width:"200px",height:"200px"}}/>
-                          </Col>
-                        </Row>
+                        floorImg ?<Flooring/>
                         : null
                       }
                     </div>
                     <div className="container-fluid p-1 border m-2">
-                      <input type="checkbox" /> Walls
+                      <input type="checkbox" onClick={()=>wallsImg()} /> Walls
+                      {
+                        showWallsImg ?<Walls/>
+                        : null
+                      }
+
                     </div>
                     <div className="container-fluid p-1 border m-2">
                       <input type="checkbox" /> Ceiling
