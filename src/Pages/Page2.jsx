@@ -7,8 +7,8 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import "./Page.css";
 import { useSelector } from "react-redux";
-import HomeCard from "../components/HomeCard";
-import { setID } from "../redux/reducer";
+// import HomeCard from "../components/HomeCard";
+// import { setID } from "../redux/reducer";
 import Page2Card from "./Page2Card";
 
 const Page2 = () => {
@@ -20,9 +20,9 @@ const Page2 = () => {
   const handleShow = () => setShow(true);
 
   // const [checkID, setCheckID] = useState("livingroom");
-  const arr = home.filter((room, index) => {
-    return room.id === setID ? <HomeCard key={index} room={room} /> : null;
-  });
+  // const arr = home.filter((room, index) => {
+  //   return room.id === setID ? <HomeCard key={index} room={room} /> : null;
+  // });
 
   return (
     <>

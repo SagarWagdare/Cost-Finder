@@ -31,7 +31,7 @@ const Bedroom = () => {
     <>
       <div className="mx-auto">
         <Row>
-          <Card style={{ width: "500px" }} className="col mx-3">
+          <Card style={{ width: "500px" }} className="col mx-5 shadow">
             <Card.Body>
               <Card.Title>BEDROOMS</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">

@@ -2,15 +2,31 @@ import React, { useState } from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
 const Page2Card = () => {
-    const [card, setCard] = useState(true);
+    const [card, setCard] = useState(false);
 
   const clicked = () => {
-    if (card == true) {
-      setCard(false);
-    } else {
+    if (card === false) {
       setCard(true);
+    } else {
+      setCard(false);
+      setShowImg(false)
     }
   };
+
+  const [showImg,setShowImg] = useState(false);
+
+  const flooringImg = ()=>{
+       if(showImg===false){
+    setShowImg(true);
+       }
+
+       else  {
+        setShowImg(false);
+       }
+       
+  }
+
+  console.log(showImg);
   return (
     <div>
          <div className="col-lg-6 mb-5">
@@ -60,25 +76,44 @@ const Page2Card = () => {
                   <Col>Lavish</Col>
 
                   <div className=" p-4">
-                    <div className="container-fluid p-1">
-                      <input type="checkbox" /> Flooring
+                    <div className="container-fluid p-1 border m-2">
+
+                      <input type="checkbox" onClick={()=>flooringImg()}/> Flooring
+                      
+                      {
+                        showImg ? <Row className='p-3'>
+                          <Col>
+                          <img src="http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/vitrified.png" alt="" 
+                          style={{width:"200px",height:"200px"}}/>
+                          </Col>
+                          <Col>
+                          <img src="http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/wooden.png" alt="" 
+                          style={{width:"200px",height:"200px"}}/>
+                          </Col>
+                          <Col>
+                          <img src="http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/italian.png" alt="" 
+                          style={{width:"200px",height:"200px"}}/>
+                          </Col>
+                        </Row>
+                        : null
+                      }
                     </div>
-                    <div className="container-fluid p-1">
+                    <div className="container-fluid p-1 border m-2">
                       <input type="checkbox" /> Walls
                     </div>
-                    <div className="container-fluid p-1">
+                    <div className="container-fluid p-1 border m-2">
                       <input type="checkbox" /> Ceiling
                     </div>
-                    <div className="container-fluid p-1">
+                    <div className="container-fluid p-1 border m-2">
                       <input type="checkbox" /> Electricals
                     </div>
-                    <div className="container-fluid p-1">
+                    <div className="container-fluid p-1 border m-2">
                       <input type="checkbox" /> Windows
                     </div>
-                    <div className="container-fluid p-1">
+                    <div className="container-fluid p-1 border m-2">
                       <input type="checkbox" /> Doors
                     </div>
-                    <div className="container-fluid p-1">
+                    <div className="container-fluid p-1 border m-2">
                       <input type="checkbox" /> Furniture
                     </div>
                   </div>
