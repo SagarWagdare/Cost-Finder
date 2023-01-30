@@ -9,12 +9,12 @@ export const HouseSlice = createSlice({
   initialState,
   reducers: {
 
-    // setID: (state)=>{
-    //   state.house.forEach((el)=>{
-    //     const id = el.title.toLocaleLowerCase().replaceAll("","");
-    //     el.id = id;
-    //   })
-    // },
+    setID: (state)=>{
+      state.house.forEach((el)=>{
+        const id = el.title.toLocaleLowerCase().replaceAll("","");
+        el.id = id;
+      })
+    },
     bathroomIncrement: (state, action) => {
       state.house.push(action.payload)
       state.carpetArea += 40
@@ -52,7 +52,7 @@ export const HouseSlice = createSlice({
 });
 
 export const {
-  bathroomIncrement, bedroomIncrement, bathroomDecrement, bedroomDecrement
+  setID, bathroomIncrement, bedroomIncrement, bathroomDecrement, bedroomDecrement
 } = HouseSlice.actions;
 
 export default HouseSlice.reducer;

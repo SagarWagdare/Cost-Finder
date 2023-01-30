@@ -1,7 +1,5 @@
 import React from "react";
-import { Card, Container, Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
+import { Card, Col, NavLink, Row } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
@@ -9,6 +7,9 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import "./Page.css";
 import { useSelector } from "react-redux";
+import HomeCard from "../components/HomeCard";
+import { setID } from "../redux/reducer";
+import Page2Card from "./Page2Card";
 
 const Page2 = () => {
   const home = useSelector((e) => e.home.house);
@@ -17,105 +18,44 @@ const Page2 = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // const [checkID, setCheckID] = useState("livingroom");
+  const arr = home.filter((room, index) => {
+    return room.id === setID ? <HomeCard key={index} room={room} /> : null;
+  });
+
   return (
     <>
       <section className="my-5">
-        <Row>
-          <div className="col">
-            <Card className="mx-4 p-5 border shadow" style={{ width: "400px" }}>
-              <Row>
-                <Col sm={8}>Living Room</Col>
-                <Col sm={3}>
-                  <Form>
-                    <Form.Check type="switch" id="custom-switch" />
-                  </Form>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm={8}>Master Bedroom</Col>
-                <Col sm={3}>
-                  <Form>
-                    <Form.Check type="switch" id="custom-switch" />
-                  </Form>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm={8}>Master Bathroom</Col>
-                <Col sm={3}>
-                  <Form>
-                    <Form.Check type="switch" id="custom-switch" />
-                  </Form>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm={8}>Kitchen</Col>
-                <Col sm={3}>
-                  <Form>
-                    <Form.Check type="switch" id="custom-switch" />
-                  </Form>
-                </Col>
-              </Row>
-              {home.map((item,index) => (
-                <Row key={index}>
-                  <Col  sm={8}>{item.title}</Col>
-                  <Col sm={3}>
-                    {" "}
-                    <Form>
-                      <Form.Check type="switch" id="custom-switch" />
-                    </Form>
-                  </Col>
-                </Row>
-              ))}
-            </Card>
-          </div>
-          <div className="col">
-            <Card style={{ width: "600px" }} className="border-0 shadow">
-              <Card.Img
-                variant="top"
-                src="http://costfinder.consdeployer.com/assets/productselection/bathroombg.jpg"
-                className="p-3"
-              />
-              <Card.Body>
-                <Container>
-                  <div className="text-center">
-                    <Form.Check.Input />
-                    <Form.Check.Label>Enable Living Room</Form.Check.Label>
+        <Row className="mt-4 mx-3">
+          <div className="col-lg-3  mb-5">
+            <Card className="p-3 shadow border-0">
+              {home.map((room, index) => {
+                return (
+                  <div key={index} className="d-flex justify-content-around">
+                    <label
+                      className="form-check-label flex-grow-1"
+                      htmlFor={room.id}
+                    >
+                      <p className="mb-1">{room.title}</p>
+                    </label>
+                    <div className="form-check form-switch">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        id={room.id}
+                        onChange={() => {}}
+                      />
+                    </div>
                   </div>
-                </Container>
-                <p className="text-muted ">
-                  How would you like to spend on this room?
-                </p>
-                <Row>
-                  <Col>
-                    <Form.Check
-                      type="radio"
-                      aria-label="radio 1"
-                      className="d-inline-flex mx-2 "
-                    />
-                    <Form.Check.Label>Basic</Form.Check.Label>
-                  </Col>
-                  <Col>
-                    <Form.Check
-                      type="radio"
-                      aria-label="radio 1"
-                      className="d-inline-flex mx-2 "
-                    />
-                    <Form.Check.Label>Standard</Form.Check.Label>
-                  </Col>
-                  <Col>
-                    <Form.Check
-                      type="radio"
-                      aria-label="radio 1"
-                      className="d-inline-flex mx-2"
-                    />
-                    <Form.Check.Label>Lavish</Form.Check.Label>
-                  </Col>
-                </Row>
-              </Card.Body>
+                );
+              })}
             </Card>
           </div>
 
-          {/* Redux Store Cards */}
+          <Col>
+            <Page2Card />
+          </Col>
           <div className="col">
             <Row>
               <Card
@@ -133,7 +73,8 @@ const Page2 = () => {
                     to="/page3"
                     className="btn btn-success btn-lg  px-2 py-2 m-2"
                   >
-                    Get Detailed Estimate<i className="fa-solid fa-database"></i>
+                    Get Detailed Estimate
+                    <i className="fa-solid fa-database"></i>
                   </Link>
                 </div>
               </Card>
@@ -177,24 +118,24 @@ const Page2 = () => {
                   <Modal.Footer>
                     <div className="container">
                       <Nav.Item className="text-center ">
-                        <Nav.Link href="/home" className="my-2 text-primary">
+                        <NavLink href="/home" className="my-2 text-primary">
                           <i className="fa-solid fa-align-justify"></i>Want us
                           to Fill the Form
-                        </Nav.Link>
-                        <Nav.Link
+                        </NavLink>
+                        <NavLink
                           eventKey="link-1"
                           className="my-2  text-danger"
                         >
                           <i className="fa-solid fa-book-open-reader"></i>Read
                           about COST FINDER{" "}
-                        </Nav.Link>
-                        <Nav.Link
+                        </NavLink>
+                        <NavLink
                           eventKey="link-2"
                           className="my-2  text-success"
                         >
                           <i className="fa-brands fa-whatsapp"></i>Reach us on
                           Whatsapp
-                        </Nav.Link>
+                        </NavLink>
                       </Nav.Item>
                     </div>
                   </Modal.Footer>
