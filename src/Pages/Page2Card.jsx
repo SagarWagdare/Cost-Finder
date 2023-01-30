@@ -42,18 +42,20 @@ const Page2Card = () => {
                   alt=""
                   className="p-4"
                 />
-                <Col className="text-center text-muted p-3">
-                  <input type="checkbox" onClick={() => clicked()} />
+                 <Col className="text-center text-muted p-3">
+                <i class="fa-solid fa-arrow-right px-3"></i>
+                  <input type="checkbox" onClick={() => clicked()} active />
                   Enable Living Room
+                  <i class="fa-solid fa-arrow-left px-3"></i>
                 </Col>
 
                 <h5 className="text-muted mx-3">
-                  How would you like to spend on this room?
+                <i className="fa-solid fa-person-circle-question p-2 text-success"></i>How would you like to spend on this room?
                 </h5>
                 <Row className="px-3">
-                  <Col>Basic</Col>
-                  <Col>Standard</Col>
-                  <Col>Lavish</Col>
+                  <Col><input type="radio" /> Basic</Col>
+                  <Col><input type="radio" />  Standard</Col>
+                  <Col><input type="radio" />  Lavish</Col>
                 </Row>
 
                 <button className="btn btn-success btn-lg mx-auto  m-4 px-4 py-2">
@@ -63,17 +65,19 @@ const Page2Card = () => {
             ) : (
               <Card className="shadow" style={{ width: "750px" }}>
                 <Col className="text-center text-muted p-3">
-                  <input type="checkbox" onClick={() => clicked()} />
-                  Enable Living Room
+                <i class="fa-solid fa-arrow-right px-3"></i>
+                  <input type="checkbox" onClick={() => clicked()} active />
+                  Disable Living Room
+                  <i class="fa-solid fa-arrow-left px-3"></i>
                 </Col>
 
                 <h5 className="text-muted mx-3">
-                  How would you like to spend on this room?
+                <i className="fa-solid fa-person-circle-question p-2 text-success"></i>How would you like to spend on this room?
                 </h5>
                 <Row className="px-3">
-                  <Col>Basic</Col>
-                  <Col>Standard</Col>
-                  <Col>Lavish</Col>
+                  <Col><input type="radio" />  Basic</Col>
+                  <Col><input type="radio" />  Standard</Col>
+                  <Col><input type="radio" />  Lavish</Col>
 
                   <div className=" p-4">
                     <div className="container-fluid p-1 border m-2">

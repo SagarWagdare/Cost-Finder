@@ -1,3 +1,6 @@
+import bathroomimg from "./Images/bathroom.png"
+
+
 export const House = [
 
 
@@ -13,8 +16,8 @@ export const House = [
 
 
   {
-    image:
-      "http://costfinder.consdeployer.com/assets/roomselection/bathroom.png",
+    image:{bathroomimg}
+            ,
     title: "Master Bedroom",
     number: "1",
   },
