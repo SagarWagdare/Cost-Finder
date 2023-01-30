@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import Page1 from "../Pages/Page1";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import "./Header.css";
 const Header = () => {
   return (
