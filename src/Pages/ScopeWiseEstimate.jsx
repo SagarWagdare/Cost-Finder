@@ -1,5 +1,7 @@
 import React from 'react';
 import Chart from "react-apexcharts";
+import { Card } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 
 const ScopeWiseEstimate = () => {
@@ -20,17 +22,21 @@ const customizationTitles = ["Flooring", "Walls"];
     <Card.Body>
       <p className="display-6 text-center">Scope Wise Estimate</p>
 
-      {home.map((item, index) => (
-        <h1>{item.title}</h1>
-      ))}
-
-      <Chart
+     
+        <Chart
         type="donut"
         width={500}
         height={550}
-        series={customizationTitles}
-        options = {{}}
-      ></Chart>
+        series={[23,44]}
+        options={{
+            labels: customizationTitles,
+          }}
+      
+      >
+       
+      </Chart>
+     
+     
     </Card.Body>
   </Card>
   )

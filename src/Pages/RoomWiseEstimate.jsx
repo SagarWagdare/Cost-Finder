@@ -1,6 +1,7 @@
 import React from 'react';
 import Chart from "react-apexcharts";
 import { Card } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 
 const RoomWiseEstimate = () => {
