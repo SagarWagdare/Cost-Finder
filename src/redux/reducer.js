@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { House } from "../House";
 
-const initialState = { house: House, carpetArea: 510, totalCost: 0, floorPrice: 0, wallCost: 0 ,floorCost:0};
+const initialState = { house: House, carpetArea: 510, totalCost: 0, floorPrice: 0, wallCost: 0, floorCost: 0 };
 
 export const HouseSlice = createSlice({
   name: "counter",
@@ -50,14 +50,15 @@ export const HouseSlice = createSlice({
 
 
     totalExpense: (state, action) => {
-      
+
       state.totalCost = action.payload;
     },
 
     flooringPrice: (state, action) => {
 
+     // eslint-disable-next-line
+       state.house.map((room) => {
 
-      state.house.map((room) => {
         if (room.id === action.payload.roomID) {
           return room.floorCost = action.payload.floors.cost;
         }
@@ -65,9 +66,10 @@ export const HouseSlice = createSlice({
     },
 
     wallsdesigningPrice: (state, action) => {
+      // eslint-disable-next-line
       state.house.map((room) => {
         if (room.id === action.payload.roomID) {
-        return  room.wallCost = action.payload.walls.cost;
+          return room.wallCost = action.payload.walls.cost;
         }
       })
     },

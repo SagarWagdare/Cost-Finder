@@ -32,7 +32,7 @@ const Page2 = () => {
   useEffect(() => {
     dispatch(setID());
     dispatch(totalExpense(totalPrice));
-  }, [totalPrice]);
+  }, [totalPrice,dispatch]);
 
   return (
     <>

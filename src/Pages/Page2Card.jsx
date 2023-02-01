@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Flooring from "./Flooring";

@@ -48,7 +48,7 @@ const Bedroom = () => {
                 >
                   -
                 </button>
-                <Form.Control value={count} />
+                <Form.Control placeholder={count} />
                 <button
                   className=" btn bg-primary"
                   onClick={() => {

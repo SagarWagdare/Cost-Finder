@@ -8,7 +8,6 @@ const Bathroom = () => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
 
-  console.log(count);
   const increment = () => {
     setCount(count + 1);
   };
