@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
@@ -6,7 +5,7 @@ import Flooring from "./Flooring";
 import Walls from "./Walls";
 // import { CustomizeRoom } from "./CustomizeRoom";
 
- const Page2Card = ({ room, index, roomID, checkID }) => {
+const Page2Card = ({ room, index, roomID, checkID }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
@@ -59,7 +58,7 @@ import Walls from "./Walls";
               </div>
 
               <Flooring roomIndex={index} roomID={roomID} />
-              <Walls/>
+              <Walls />
             </Card.Body>
           ) : (
             <>
@@ -113,6 +112,4 @@ import Walls from "./Walls";
   );
 };
 
-
-
-export default Page2Card
+export default Page2Card;

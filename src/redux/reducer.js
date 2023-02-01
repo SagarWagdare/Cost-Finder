@@ -2,16 +2,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { House } from "../House";
 
-const initialState = { house: House, carpetArea: 510 ,totalCost:0};
+const initialState = { house: House, carpetArea: 510, totalCost: 0 };
 
 export const HouseSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
 
-    setID: (state)=>{
-      state.house.forEach((el)=>{
-        const id = el.title.toLocaleLowerCase().replaceAll(" ","");
+    setID: (state) => {
+      state.house.forEach((el) => {
+        const id = el.title.toLowerCase().replaceAll(" ", "");
         el.id = id;
       })
     },

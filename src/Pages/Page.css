@@ -1,23 +1,17 @@
-.input{
-    font-size: 20px;
+.input {
+  font-size: 20px;
 }
 
-
-.carpetArea-card{
-    background-color: #E3EDF6;
+.carpetArea-card {
+  background-color: #e3edf6;
 }
 
-.column{
-    padding-top: 30px;
-    padding-left: 30px;
-
+.column {
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
-.column:active{
-    background-color: lightgrey;
-
-}
-
-img:active{
-    box-shadow: 2px 2px 2px 2px grey;
+.img:active {
+  box-shadow: 5px 5px 5px 5px grey;
+  image-resolution: 20px;
 }

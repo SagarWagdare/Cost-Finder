@@ -12,25 +12,6 @@ import { setID } from "../redux/reducer";
 import Page2Card from "./Page2Card";
 
 const Page2 = () => {
-  // const [livingRoom, setLivingRoom] = useState(false);
-
-  // const home = useSelector((e) => e.home.house);
-
-  // const [show, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-
-  // const [checkID, setCheckID] = useState("livingroom");
-
-  // const [isToggled, setisToggled] = useState(false);
-
-
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(setID());
-  // }, []);
   const [isToggled, setisToggled] = useState(false);
   const [checkID, setCheckID] = useState("livingroom");
   const [show, setShow] = useState(false);
@@ -40,17 +21,17 @@ const Page2 = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   useEffect(() => {
     dispatch(setID());
   }, []);
-console.log(home[0]);
+  console.log(home[0]);
   return (
     <>
       <section className="my-5">
         <Row className="mt-4 mx-3">
           <div className="col-lg-3  mb-5">
-              <Card className="p-3 shadow border-0">
+            <Card className="p-3 shadow border-0">
               {home.map((room, index) => {
                 return (
                   <div key={index} className="d-flex justify-content-around">

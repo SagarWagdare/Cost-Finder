@@ -13,9 +13,9 @@ const Walls = () => {
     }
   };
 
-  const click = ()=>{
-    alert("hi")
-  }
+  const click = () => {
+    alert("hi");
+  };
 
   const wallsImg = [
     {
@@ -38,31 +38,33 @@ const Walls = () => {
   ];
   return (
     <Card className="p-2 m-2">
-     {allwallsImg? <Row>
-        <Col>
-          <Form.Check.Input onClick={() => wallsonClick()} />
-          <Form.Check.Label>Walls</Form.Check.Label>        </Col>
+      {allwallsImg ? (
         <Row>
-          {wallsImg.map((walls) => (
-            <Col className="px-3 column">
-              <img
-                src={walls.img}
-                alt=""
-                style={{ width: "110px", height: "110px" }}
-            
-              />
+          <Col>
+            <Form.Check.Input onClick={() => wallsonClick()} />
+            <Form.Check.Label>Walls</Form.Check.Label>{" "}
+          </Col>
+          <Row>
+            {wallsImg.map((walls) => (
+              <Col className="px-3 column">
+                <img
+                  src={walls.img}
+                  alt=""
+                  style={{ width: "110px", height: "110px" }}
+                  className="img"
+                />
 
-
-              <p className="text-center font-monospace">{walls.title}</p>
-            </Col>
-          ))}
+                <p className="text-center font-monospace">{walls.title}</p>
+              </Col>
+            ))}
+          </Row>
         </Row>
-      </Row>:
-       <Col>
-       <Form.Check.Input type="checkbox" onClick={() => wallsonClick()} />
-       <Form.Check.Label>Walls</Form.Check.Label> 
-
-     </Col>}
+      ) : (
+        <Col>
+          <Form.Check.Input type="checkbox" onClick={() => wallsonClick()} />
+          <Form.Check.Label>Walls</Form.Check.Label>
+        </Col>
+      )}
     </Card>
   );
 };

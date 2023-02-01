@@ -11,7 +11,7 @@ export const House = [
       "http://costfinder.consdeployer.com/assets/roomselection/livingroom.PNG",
     title: "Living Room",
     number: "1",
-    cover:"http://costfinder.consdeployer.com/assets/productselection/livingroombg.jpg"
+    cover: "http://costfinder.consdeployer.com/assets/productselection/livingroombg.jpg"
   },
 
 
@@ -23,7 +23,7 @@ export const House = [
     ,
     title: "Master Bedroom",
     number: "1",
-    cover:"http://costfinder.consdeployer.com/assets/productselection/kitchenbg.jpg"
+    cover: "http://costfinder.consdeployer.com/assets/productselection/kitchenbg.jpg"
   },
   {
 
@@ -31,7 +31,7 @@ export const House = [
       "http://costfinder.consdeployer.com/assets/roomselection/bathroom.png",
     title: "Master Bathroom",
     number: "1",
-    cover:"http://costfinder.consdeployer.com/assets/productselection/bedroombg.jpg"
+    cover: "http://costfinder.consdeployer.com/assets/productselection/bedroombg.jpg"
   },
   {
 
@@ -39,7 +39,7 @@ export const House = [
       "http://costfinder.consdeployer.com/assets/roomselection/kitchen.png",
     title: "Kitchen",
     number: "1",
-    cover:"http://costfinder.consdeployer.com/assets/productselection/bathroombg.jpg"
+    cover: "http://costfinder.consdeployer.com/assets/productselection/bathroombg.jpg"
   },
 
 ]

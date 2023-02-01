@@ -2,7 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import Chart from "react-apexcharts"
+import Chart from "react-apexcharts";
 import DownloadButton from "../DownloadEstimate/DownloadButton";
 const Page3 = () => {
   const home = useSelector((e) => e.home.house);
@@ -15,17 +15,19 @@ const Page3 = () => {
             <Card.Body>
               <p className="display-6 text-center">Room Wise Estimate</p>
               <Chart
-              type="donut"
-              width={500}
-              height={550}
-              series={[60,70,80,90]}
-              options={{
-                
-                labels:['Living Room','Master Bedroom','Master Bathroom','Kitchen']
-              }}>
-
-       
-              </Chart>
+                type="donut"
+                width={500}
+                height={550}
+                series={[60, 70, 80, 90]}
+                options={{
+                  labels: [
+                    "Living Room",
+                    "Master Bedroom",
+                    "Master Bathroom",
+                    "Kitchen",
+                  ],
+                }}
+              ></Chart>
             </Card.Body>
           </Card>
 
@@ -141,7 +143,7 @@ const Page3 = () => {
 
       <section>
         <div className="container p-3 text-center">
-          <DownloadButton/>
+          <DownloadButton />
         </div>
       </section>
     </>

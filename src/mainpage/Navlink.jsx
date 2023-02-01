@@ -1,15 +1,11 @@
-import React from 'react'
-import './Navlink.css'
+import React from "react";
+import "./Navlink.css";
 const Navlink = () => {
   return (
-   <>
-<div className="navlinks">
+    <>
+      <div className="navlinks"></div>
+    </>
+  );
+};
 
-</div>
-
-
-   </>
-  )
-}
-
-export default Navlink
+export default Navlink;

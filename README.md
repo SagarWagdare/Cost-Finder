@@ -2,4 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Welcome!This an app Name (CostFinder) which calculate overall budget related to your requirement and Space.
+
+Welcome to the World of CostFinder where you can calculate overall cost Estimate of your house including Flooring ,Designing Walls,Furnitures etc.
+
+Owner: Sagar@appsdeployer.com
+

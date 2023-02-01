@@ -50,7 +50,7 @@ const Page1 = () => {
             <Card.Img
               variant="top"
               src="https://www.homebazaar.com/knowledge/wp-content/uploads/2021/06/Built-up-area.jpg"
-              style={{ width: "600px" ,height:"250px"}}
+              style={{ width: "600px", height: "250px" }}
             />
             <Card.Body>
               <Card.Title className="text-center display-5">
@@ -62,7 +62,9 @@ const Page1 = () => {
               </Card.Text>
               <Card.Subtitle className="mb-2 text-muted text-center display-6">
                 Assumed Carpet Area (Sq. ft.)=
-                <span className=" d-block text-danger bg-light">{carpetArea} sq.ft</span>
+                <span className=" d-block text-danger bg-light">
+                  {carpetArea} sq.ft
+                </span>
               </Card.Subtitle>
               <Card.Subtitle className="mb-4 text-muted text-center display-6 my-5">
                 Please enter your Carpet Area (Sq. ft.){" "}
@@ -84,8 +86,6 @@ const Page1 = () => {
       <section>
         <h1 className="text-center mt-5 mb-3 ">Assumed Configuration</h1>
         <div className=" container">
-
-
           {/* Home Cards */}
           {home.map((item, index) => (
             <HomeCard key={index} item={item} />

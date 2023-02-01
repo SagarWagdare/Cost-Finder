@@ -22,7 +22,8 @@ const Bathroom = () => {
   };
 
   const bathroom = {
-    image: "http://costfinder.consdeployer.com/assets/roomselection/bathroom.png",
+    image:
+      "http://costfinder.consdeployer.com/assets/roomselection/bathroom.png",
     title: ` Bathroom ${count + 1}`,
     number: "1",
   };
@@ -52,8 +53,8 @@ const Bathroom = () => {
                   className=" btn bg-primary"
                   onClick={() => {
                     dispatch(bathroomIncrement(bathroom));
-                   console.log(bathroom);  
-                   increment();
+                    console.log(bathroom);
+                    increment();
                   }}
                 >
                   +
@@ -68,7 +69,3 @@ const Bathroom = () => {
 };
 
 export default Bathroom;
-
-
-
-

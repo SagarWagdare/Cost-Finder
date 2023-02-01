@@ -13,9 +13,9 @@ const Flooring = () => {
     }
   };
 
-  const clickImg = ()=>{
-    alert("hbh")
-  }
+  const clickImg = () => {
+    alert("hbh");
+  };
   const floorImg = [
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/vitrified.png",
@@ -53,7 +53,8 @@ const Flooring = () => {
                   src={floors.img}
                   alt={floors.alt}
                   style={{ width: "110px", height: "110px" }}
-                  onClick = {()=> clickImg()}
+                  onClick={() => clickImg()}
+                  className="img"
                 />
 
                 <p className="text-center font-monospace">{floors.title}</p>
@@ -64,7 +65,8 @@ const Flooring = () => {
       ) : (
         <Col>
           <Form.Check.Input className="" onClick={() => Flooringonclick()} />
-          <Form.Check.Label>Flooring</Form.Check.Label>        </Col>
+          <Form.Check.Label>Flooring</Form.Check.Label>{" "}
+        </Col>
       )}
     </Card>
   );
