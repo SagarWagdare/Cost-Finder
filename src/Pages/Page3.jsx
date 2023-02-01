@@ -1,12 +1,12 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+// import { Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import DownloadButton from "../DownloadEstimate/DownloadButton";
 import ScopeWiseEstimate from "./ScopeWiseEstimate";
 import RoomWiseEstimate from "./RoomWiseEstimate";
 const Page3 = () => {
   const totalCost = useSelector((el) => el.home.totalCost);
-  const home = useSelector((e) => e.home.house);
+  // const home = useSelector((e) => e.home.house);
 
 
   return (
@@ -23,14 +23,14 @@ const Page3 = () => {
 
       <section>
         <div className="container d-flex ">
-          <div className="container ">
+          {/* <div className="container ">
             {home.map((item) => (
               <Row>
                 <Col>{item.title}</Col>
                 <Col>{item.number}</Col>
               </Row>
             ))}
-          </div>
+          </div> */}
           <div className="container">
             
           </div>

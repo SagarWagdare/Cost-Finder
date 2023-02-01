@@ -3,6 +3,11 @@ import { Card, Col, Form, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { flooringPrice } from "../redux/reducer";
 import "./Page.css";
+import VitrifiedTiles from "../Images/vitrified (1).png";
+import WoodenFlooring from "../Images/wooden.png" 
+import Italianmarble from "../Images/italian.png"
+
+
 
 const Flooring = ({ roomID }) => {
   const dispatch = useDispatch();
@@ -18,21 +23,21 @@ const Flooring = ({ roomID }) => {
 
   const floorImg = [
     {
-      img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/vitrified.png",
+      img: VitrifiedTiles,
       title: "Vitrified Tiles",
       cost: 20000,
       alt: "Vitrified Tiles",
     },
 
     {
-      img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/wooden.png",
+      img: WoodenFlooring,
       title: "Wooden Flooring",
       cost: 50000,
       alt: "Wooden Flooring",
     },
 
     {
-      img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/italian.png",
+      img: Italianmarble,
       title: "Italian Marble",
       cost: 65000,
       alt: "Italian Marble",

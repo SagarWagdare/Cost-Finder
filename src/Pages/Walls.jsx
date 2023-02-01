@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { wallsdesigningPrice } from "../redux/reducer";
+import Painting from "../Images/painting.png" 
+import PaintingandWallPutty from "../Images/paintingandwallputty.png" ;
+import paintingwallputtywallpaper from "../Images/paintingwallputtywallpaper.png" ;
+
 
 const Walls = ({roomID}) => {
 
@@ -21,19 +25,19 @@ const Walls = ({roomID}) => {
 
   const wallsImg = [
     {
-      img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/walltreatment/painting.png",
+      img:Painting,
       title: "Painting",
       cost: 20000,
     },
 
     {
-      img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/walltreatment/paintingandwallputty.png",
+      img: PaintingandWallPutty,
       title: "Painting & Wall Putty",
       cost: 40000,
     },
 
     {
-      img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/walltreatment/paintingwallputtywallpaper.png",
+      img: paintingwallputtywallpaper,
       title: "Painting ,Wall Putty & Wallpaper",
       cost: 65000,
     },
