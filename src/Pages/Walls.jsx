@@ -1,9 +1,13 @@
-import { click } from "@testing-library/user-event/dist/click";
 import React, { useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { wallsdesigningPrice } from "../redux/reducer";
 
-const Walls = () => {
+const Walls = (roomID) => {
+
   const [allwallsImg, setAllWallsImg] = useState(false);
+ 
+  const dispatch = useDispatch();
 
   const wallsonClick = () => {
     if (allwallsImg == false) {
@@ -13,9 +17,7 @@ const Walls = () => {
     }
   };
 
-  const click = () => {
-    alert("hi");
-  };
+  
 
   const wallsImg = [
     {
@@ -45,13 +47,16 @@ const Walls = () => {
             <Form.Check.Label>Walls</Form.Check.Label>{" "}
           </Col>
           <Row>
-            {wallsImg.map((walls) => (
-              <Col className="px-3 column">
+            {wallsImg.map((walls,index) => (
+              <Col key={index} className="px-3 column">
                 <img
                   src={walls.img}
                   alt=""
                   style={{ width: "110px", height: "110px" }}
                   className="img"
+                  onClick={()=>{
+                    dispatch(wallsdesigningPrice({walls,roomID}))
+                  }}
                 />
 
                 <p className="text-center font-monospace">{walls.title}</p>

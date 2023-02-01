@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import "./Page.css";
 import { useDispatch, useSelector } from "react-redux";
 import HomeCard from "../components/HomeCard";
-import { setID } from "../redux/reducer";
+import { setID, totalExpense } from "../redux/reducer";
 import Page2Card from "./Page2Card";
 
 const Page2 = () => {
@@ -16,16 +16,26 @@ const Page2 = () => {
   const [checkID, setCheckID] = useState("livingroom");
   const [show, setShow] = useState(false);
   const home = useSelector((el) => el.home.house);
-  const dispatch = useDispatch();
   const totalCost = useSelector((el) => el.home.totalCost);
+
+  const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  let floorPrice = 0,
+    wallPrice = 0,
+    totalPrice = 0;
+  home.forEach((obj) => {
+    if (obj.floorCost) floorPrice += obj.floorCost;
+    if (obj.wallCost) wallPrice += obj.wallCost;
+  });
+  totalPrice = floorPrice + wallPrice;
   useEffect(() => {
     dispatch(setID());
-  }, []);
-  console.log(home[0]);
+    dispatch(totalExpense());
+  }, [totalPrice]);
+  console.log(totalPrice);
   return (
     <>
       <section className="my-5">

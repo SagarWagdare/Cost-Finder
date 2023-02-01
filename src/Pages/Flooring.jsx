@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { flooringPrice } from "../redux/reducer";
 import "./Page.css";
 
-const Flooring = () => {
+const Flooring = ({
+  roomID
+}) => {
+
+
+  const dispatch = useDispatch();
   const [FlooringImg, setFlooringImg] = useState(false);
 
   const Flooringonclick = () => {
@@ -13,28 +20,26 @@ const Flooring = () => {
     }
   };
 
-  const clickImg = () => {
-    alert("hbh");
-  };
+  
   const floorImg = [
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/vitrified.png",
       title: "Vitrified Tiles",
-      price: "1500",
+      cost: 1500,
       alt: "Vitrified Tiles",
     },
 
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/wooden.png",
       title: "Wooden Flooring",
-      price: "2500",
+      cost: 2500,
       alt: "Wooden Flooring",
     },
 
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/italian.png",
       title: "Italian Marble",
-      price: "3500",
+      cost: 3500,
       alt: "Italian Marble",
     },
   ];
@@ -47,14 +52,17 @@ const Flooring = () => {
             <Form.Check.Label>Flooring</Form.Check.Label>
           </Col>
           <Row>
-            {floorImg.map((floors) => (
-              <Col className=" column">
+            {floorImg.map((floors,index) => (
+              <Col key={index} className=" column">
                 <img
                   src={floors.img}
                   alt={floors.alt}
                   style={{ width: "110px", height: "110px" }}
-                  onClick={() => clickImg()}
+                  onClick={() => {
+                    dispatch(flooringPrice({floors,roomID}))
+                  }}
                   className="img"
+                
                 />
 
                 <p className="text-center font-monospace">{floors.title}</p>
