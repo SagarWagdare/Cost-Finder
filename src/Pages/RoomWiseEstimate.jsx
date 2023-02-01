@@ -1,9 +1,11 @@
 import React from 'react';
 import Chart from "react-apexcharts";
+import { Card } from 'react-bootstrap';
 
 
 const RoomWiseEstimate = () => {
-    
+    const home = useSelector((e) => e.home.house);
+
   const titles = home.map((el) => el.title);
 
   const Flooring = home.map((el) => {

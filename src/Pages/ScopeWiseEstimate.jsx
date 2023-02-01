@@ -3,7 +3,8 @@ import Chart from "react-apexcharts";
 
 
 const ScopeWiseEstimate = () => {
-    
+    const home = useSelector((e) => e.home.house);
+
   let floorPrice = 0,
   wallPrice = 0;
 home.forEach((obj) => {
