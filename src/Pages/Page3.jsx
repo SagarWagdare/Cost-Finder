@@ -5,11 +5,12 @@ import { useSelector } from "react-redux";
 import Chart from "react-apexcharts";
 import DownloadButton from "../DownloadEstimate/DownloadButton";
 const Page3 = () => {
+  const totalCost = useSelector((el) => el.home.totalCost);
   const home = useSelector((e) => e.home.house);
   return (
     <>
       <section>
-        <p className="text-center display-6">Your Total Estimate is ₹ 0</p>
+        <p className="text-center display-6">Your Total Estimate is ₹ {totalCost}</p>
         <div className="container d-flex ">
           <Card style={{ width: "50rem" }} className="mx-2 shadow border-0">
             <Card.Body>
@@ -39,7 +40,10 @@ const Page3 = () => {
                 <>
                   {/* <Col key={index}>{item.title}</Col> */}
 
-                  {/* <Chart
+                </>
+              ))}
+
+              <Chart
               type="donut"
               width={500}
               height={550}
@@ -47,11 +51,9 @@ const Page3 = () => {
               options={{
                 
               }}>
-{item.title}
+              
        
-              </Chart> */}
-                </>
-              ))}
+              </Chart>
             </Card.Body>
           </Card>
         </div>

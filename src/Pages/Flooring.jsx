@@ -4,11 +4,7 @@ import { useDispatch } from "react-redux";
 import { flooringPrice } from "../redux/reducer";
 import "./Page.css";
 
-const Flooring = ({
-  roomID
-}) => {
-
-
+const Flooring = ({ roomID }) => {
   const dispatch = useDispatch();
   const [FlooringImg, setFlooringImg] = useState(false);
 
@@ -20,26 +16,25 @@ const Flooring = ({
     }
   };
 
-  
   const floorImg = [
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/vitrified.png",
       title: "Vitrified Tiles",
-      cost: 1500,
+      cost: 20000,
       alt: "Vitrified Tiles",
     },
 
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/wooden.png",
       title: "Wooden Flooring",
-      cost: 2500,
+      cost: 50000,
       alt: "Wooden Flooring",
     },
 
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/flooring/italian.png",
       title: "Italian Marble",
-      cost: 3500,
+      cost: 65000,
       alt: "Italian Marble",
     },
   ];
@@ -52,17 +47,16 @@ const Flooring = ({
             <Form.Check.Label>Flooring</Form.Check.Label>
           </Col>
           <Row>
-            {floorImg.map((floors,index) => (
+            {floorImg.map((floors, index) => (
               <Col key={index} className=" column">
                 <img
                   src={floors.img}
                   alt={floors.alt}
                   style={{ width: "110px", height: "110px" }}
                   onClick={() => {
-                    dispatch(flooringPrice({floors,roomID}))
+                    dispatch(flooringPrice({ floors, roomID }));
                   }}
                   className="img"
-                
                 />
 
                 <p className="text-center font-monospace">{floors.title}</p>

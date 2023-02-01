@@ -58,7 +58,7 @@ const Page2Card = ({ room, index, roomID, checkID }) => {
               </div>
 
               <Flooring roomIndex={index} roomID={roomID} />
-              <Walls />
+              <Walls roomIndex={index} roomID={roomID} />
             </Card.Body>
           ) : (
             <>

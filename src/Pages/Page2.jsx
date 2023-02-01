@@ -33,7 +33,7 @@ const Page2 = () => {
   totalPrice = floorPrice + wallPrice;
   useEffect(() => {
     dispatch(setID());
-    dispatch(totalExpense());
+    dispatch(totalExpense(totalPrice));
   }, [totalPrice]);
   console.log(totalPrice);
   return (

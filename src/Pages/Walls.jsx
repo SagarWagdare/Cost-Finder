@@ -23,19 +23,19 @@ const Walls = (roomID) => {
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/walltreatment/painting.png",
       title: "Painting",
-      price: "1500",
+      cost: 20000,
     },
 
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/walltreatment/paintingandwallputty.png",
       title: "Painting & Wall Putty",
-      price: "2500",
+      cost: 40000,
     },
 
     {
       img: "http://costfinder.consdeployer.com/assets/productselection/livingroom/walltreatment/paintingwallputtywallpaper.png",
       title: "Painting ,Wall Putty & Wallpaper",
-      price: "3500",
+      cost: 65000,
     },
   ];
   return (
@@ -54,7 +54,7 @@ const Walls = (roomID) => {
                   alt=""
                   style={{ width: "110px", height: "110px" }}
                   className="img"
-                  onClick={()=>{
+                  onClick={() => {
                     dispatch(wallsdesigningPrice({walls,roomID}))
                   }}
                 />
