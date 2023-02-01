@@ -16,6 +16,8 @@ home.forEach((obj) => {
 
 const customizationTitles = ["Flooring", "Walls"];
 
+const customizationExpense = [floorPrice, wallPrice];
+
   return (
 
     <Card style={{ width: "50rem" }} className=" shadow mx-2 border-0">
@@ -27,7 +29,7 @@ const customizationTitles = ["Flooring", "Walls"];
         type="donut"
         width={500}
         height={550}
-        series={[23,44]}
+        series={customizationExpense}
         options={{
             labels: customizationTitles,
           }}

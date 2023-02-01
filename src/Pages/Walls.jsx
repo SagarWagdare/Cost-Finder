@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { wallsdesigningPrice } from "../redux/reducer";
 
 const Walls = ({roomID}) => {
@@ -10,7 +10,7 @@ const Walls = ({roomID}) => {
   const dispatch = useDispatch();
 
   const wallsonClick = () => {
-    if (allwallsImg == false) {
+    if (allwallsImg === false) {
       setAllWallsImg(true);
     } else {
       setAllWallsImg(false);

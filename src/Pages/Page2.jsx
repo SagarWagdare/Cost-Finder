@@ -6,9 +6,7 @@ import { useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import "./Page.css";
-import { useDispatch, useSelector } from "react-redux";
-import HomeCard from "../components/HomeCard";
-import { setID, totalExpense } from "../redux/reducer";
+import { useDispatch, useSelector } from "react-redux";import { setID, totalExpense } from "../redux/reducer";
 import Page2Card from "./Page2Card";
 
 const Page2 = () => {
