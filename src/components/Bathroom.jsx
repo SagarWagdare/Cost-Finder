@@ -22,8 +22,7 @@ const Bathroom = () => {
   };
 
   const bathroom = {
-    image:
-      "bathroom",
+    image: "http://costfinder.consdeployer.com/assets/roomselection/bathroom.png",
     title: ` Bathroom ${count + 1}`,
     number: "1",
   };

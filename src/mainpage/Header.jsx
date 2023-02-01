@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import { Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import "./Header.css";
 const Header = () => {
   return (
@@ -27,7 +27,7 @@ const Header = () => {
         {/* <Row>
           <div className="d-flex">
             <Col sm={2}>
-              <span>
+              <span >
                 <i className="fa-solid fa-1 fa-2x"></i>
               </span>
             </Col>

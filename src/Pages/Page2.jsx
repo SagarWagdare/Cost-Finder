@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Col, NavLink, Row } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -6,104 +6,84 @@ import { useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import "./Page.css";
-import { useSelector } from "react-redux";
-// import HomeCard from "../components/HomeCard";
-// import { setID } from "../redux/reducer";
+import { useDispatch, useSelector } from "react-redux";
+import HomeCard from "../components/HomeCard";
+import { setID } from "../redux/reducer";
 import Page2Card from "./Page2Card";
 
 const Page2 = () => {
+  // const [livingRoom, setLivingRoom] = useState(false);
 
-  const [livingRoom,setLivingRoom] = useState(false);
+  // const home = useSelector((e) => e.home.house);
 
-  const livingRoomToggle = ()=>{
-    if(livingRoom === false){
-      setLivingRoom()
-    }
-  }
-  const home = useSelector((e) => e.home.house);
+  // const [show, setShow] = useState(false);
 
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   // const [checkID, setCheckID] = useState("livingroom");
 
+  // const [isToggled, setisToggled] = useState(false);
+
+
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(setID());
+  // }, []);
+  const [isToggled, setisToggled] = useState(false);
+  const [checkID, setCheckID] = useState("livingroom");
+  const [show, setShow] = useState(false);
+  const home = useSelector((el) => el.home.house);
+  const dispatch = useDispatch();
+  const totalCost = useSelector((el) => el.home.totalCost);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  
+  useEffect(() => {
+    dispatch(setID());
+  }, []);
+console.log(home[0]);
   return (
     <>
       <section className="my-5">
         <Row className="mt-4 mx-3">
           <div className="col-lg-3  mb-5">
-            <Card className="p-3 shadow border-0">
-              {/* {home.map((room, index) => {
+              <Card className="p-3 shadow border-0">
+              {home.map((room, index) => {
                 return (
                   <div key={index} className="d-flex justify-content-around">
-                    <label
-                      className="form-check-label flex-grow-1"
-                      htmlFor={room.id}
-                    >
-                      <p className="mb-1">{room.title}</p>
-                    </label>
+                    <p className="mb-1 flex-grow-1">{room.title}</p>
                     <div className="form-check form-switch">
                       <input
+                        checked={checkID === room.id}
                         className="form-check-input"
                         type="checkbox"
-                        id={room.id}
-                        onChange={() => {}}
+                        onChange={() => {
+                          setCheckID(room.id);
+                          setisToggled(!isToggled);
+                        }}
                       />
                     </div>
                   </div>
                 );
-              })} */}
-              {home
-                .filter((room) => room.id === 1)
-                .map((item,index) => (
-                  <Row key={index}>
-                    <Col sm={8}>{item.title}</Col>
-                    <Col><div className="form-check form-switch">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                    
-                      />
-                    </div></Col>
-                  </Row>
-                ))}
-
-              {home
-                .filter((room) => room.id === 2)
-                .map((item) => (
-                 <Row>
-                  <Col sm={8}>{item.title}</Col>
-                  <Col>  <div className="form-check form-switch">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                    
-                      />
-                    </div></Col>
-                 </Row>
-                ))}
-
-              {home
-                .filter((room) => room.id === 3)
-                .map((item) => (
-                  <Row>
-                  <Col sm={8}>{item.title}</Col>
-                  <Col><div className="form-check form-switch">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                  
-                    />
-                  </div></Col>
-                </Row>
-                ))}
+              })}
             </Card>
           </div>
 
           <Col>
-            <Page2Card />
+            {home.map((room, index) => {
+              return (
+                <Page2Card
+                  key={index}
+                  room={room}
+                  checkID={checkID}
+                  index={index}
+                  roomID={room.id}
+                />
+              );
+            })}
           </Col>
           <div className="col">
             <Row>
@@ -112,7 +92,7 @@ const Page2 = () => {
                 className="shadow-lg mx-auto border-0 bg-white rounded"
               >
                 <Card.Body>
-                  <h5 className="text-center">Net Estimate ₹ 0</h5>
+                  <h5 className="text-center">Net Estimate ₹ {totalCost}</h5>
                   <h6 className="text-muted text-center">
                     Estimate includes labour cost + material cost
                   </h6>

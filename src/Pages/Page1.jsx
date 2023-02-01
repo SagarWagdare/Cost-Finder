@@ -33,11 +33,11 @@ const Page1 = () => {
       <Row className="p-5">
         <Col>
           {" "}
-          <Bathroom />
+          <Bedroom />
         </Col>
         <Col>
           {" "}
-          <Bedroom />
+          <Bathroom />
         </Col>
       </Row>
 
@@ -46,10 +46,11 @@ const Page1 = () => {
       {/* Carpet Area square */}
       <section>
         <div className="container">
-          <Card style={{ width: "700px" }} className="mx-auto">
+          <Card style={{ width: "600px" }} className="mx-auto carpetArea-card">
             <Card.Img
               variant="top"
-              src="https://www.indiareviews.com/wp-content/uploads//2021/05/CARPET-AREA-KYA-HAI.jpg"
+              src="https://www.homebazaar.com/knowledge/wp-content/uploads/2021/06/Built-up-area.jpg"
+              style={{ width: "600px" ,height:"250px"}}
             />
             <Card.Body>
               <Card.Title className="text-center display-5">
@@ -61,7 +62,7 @@ const Page1 = () => {
               </Card.Text>
               <Card.Subtitle className="mb-2 text-muted text-center display-6">
                 Assumed Carpet Area (Sq. ft.)=
-                <span className="bg-dark text-bg-dark">{carpetArea} sq.ft</span>
+                <span className=" d-block text-danger bg-light">{carpetArea} sq.ft</span>
               </Card.Subtitle>
               <Card.Subtitle className="mb-4 text-muted text-center display-6 my-5">
                 Please enter your Carpet Area (Sq. ft.){" "}

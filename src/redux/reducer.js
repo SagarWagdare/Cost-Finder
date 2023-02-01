@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { House } from "../House";
 
-const initialState = { house: House, carpetArea: 510 };
+const initialState = { house: House, carpetArea: 510 ,totalCost:0};
 
 export const HouseSlice = createSlice({
   name: "counter",
@@ -11,7 +11,7 @@ export const HouseSlice = createSlice({
 
     setID: (state)=>{
       state.house.forEach((el)=>{
-        const id = el.title.toLocaleLowerCase().replaceAll("","");
+        const id = el.title.toLocaleLowerCase().replaceAll(" ","");
         el.id = id;
       })
     },
@@ -41,17 +41,20 @@ export const HouseSlice = createSlice({
       });
       state.house = newArray;
 
-      // state.house.pop();
 
 
       if (action.payload > 1) {
         state.carpetArea -= 120;
       }
-    }
+    },
+    totalExpense: (state, action) => {
+      state.totalCost = action.payload;
+    },
   },
 });
 
 export const {
+  totalExpense,
   setID, bathroomIncrement, bedroomIncrement, bathroomDecrement, bedroomDecrement
 } = HouseSlice.actions;
 

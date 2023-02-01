@@ -2,7 +2,8 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
-
+import Chart from "react-apexcharts"
+import DownloadButton from "../DownloadEstimate/DownloadButton";
 const Page3 = () => {
   const home = useSelector((e) => e.home.house);
   return (
@@ -13,30 +14,42 @@ const Page3 = () => {
           <Card style={{ width: "50rem" }} className="mx-2 shadow border-0">
             <Card.Body>
               <p className="display-6 text-center">Room Wise Estimate</p>
-             
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
+              <Chart
+              type="donut"
+              width={500}
+              height={550}
+              series={[60,70,80,90]}
+              options={{
+                
+                labels:['Living Room','Master Bedroom','Master Bathroom','Kitchen']
+              }}>
+
+       
+              </Chart>
             </Card.Body>
           </Card>
 
           <Card style={{ width: "50rem" }} className=" shadow mx-2 border-0">
             <Card.Body>
               <p className="display-6 text-center">Scope Wise Estimate</p>
-             
-            {home.map((item ,index) => (
 
-            <>
-            
-            <Col key={index}>{item.title}</Col>
-             
-            </>
+              {home.map((item, index) => (
+                <>
+                  {/* <Col key={index}>{item.title}</Col> */}
+
+                  {/* <Chart
+              type="donut"
+              width={500}
+              height={550}
+              series={[45,67,89,34]}
+              options={{
                 
-            
-            ))}
+              }}>
+{item.title}
+       
+              </Chart> */}
+                </>
+              ))}
             </Card.Body>
           </Card>
         </div>
@@ -45,24 +58,23 @@ const Page3 = () => {
       <section>
         <div className="container d-flex ">
           <div className="container ">
-          <Row>
-                <Col>Living Room</Col>
-                <Col>1</Col>
-              </Row>
-              <Row>
-                <Col>Master Bedroom</Col>
-                <Col>1</Col>
-              </Row>
-              <Row>
-                <Col>Master Bathroom</Col>
-                <Col>1</Col>
-              </Row>
-              <Row>
-                <Col>Kitchen</Col>
-                <Col>1</Col>
-              </Row>
+            <Row>
+              <Col>Living Room</Col>
+              <Col>1</Col>
+            </Row>
+            <Row>
+              <Col>Master Bedroom</Col>
+              <Col>1</Col>
+            </Row>
+            <Row>
+              <Col>Master Bathroom</Col>
+              <Col>1</Col>
+            </Row>
+            <Row>
+              <Col>Kitchen</Col>
+              <Col>1</Col>
+            </Row>
             {home.map((item) => (
-
               <Row>
                 <Col>{item.title}</Col>
                 <Col>{item.number}</Col>
@@ -128,10 +140,8 @@ const Page3 = () => {
       </section>
 
       <section>
-        <div className="container py-3">
-          <button className="btn btn-info p-3 d-flex mx-auto">
-            Download Estimate{" "}
-          </button>
+        <div className="container p-3 text-center">
+          <DownloadButton/>
         </div>
       </section>
     </>
