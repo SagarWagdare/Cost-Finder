@@ -1,32 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card } from "react-bootstrap";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import { Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { bedroomDecrement, bedroomIncrement } from "../redux/reducer";
 
 const Bedroom = () => {
   const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
 
+  const bedroomQuantity = useSelector((el)=>el.home.bedroomQuantity);
   const bedroom = {
     image:
       "http://costfinder.consdeployer.com/assets/roomselection/bedroom.png",
-    title: ` Bedroom ${count + 1}`,
+    title: ` Bedroom ${bedroomQuantity + 1}`,
     number: "1",
   };
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    } else {
-      return count;
-    }
-  };
+ 
   return (
     <>
       <div className="mx-auto">
@@ -42,18 +32,18 @@ const Bedroom = () => {
                 <button
                   className="btn bg-primary"
                   onClick={() => {
-                    dispatch(bedroomDecrement(count));
-                    decrement();
+                    dispatch(bedroomDecrement());
+                    
                   }}
                 >
                   -
                 </button>
-                <Form.Control placeholder={count} />
+                <Form.Control placeholder={bedroomQuantity} />
                 <button
                   className=" btn bg-primary"
                   onClick={() => {
                     dispatch(bedroomIncrement(bedroom));
-                    increment();
+                    
                   }}
                 >
                   +

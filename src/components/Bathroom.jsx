@@ -1,29 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card } from "react-bootstrap";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { bathroomDecrement, bathroomIncrement } from "../redux/reducer";
 const Bathroom = () => {
   const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
-
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    } else {
-      return count;
-    }
-  };
+     
+  const bathroomQuantity = useSelector((el)=>el.home.bathroomQuantity);
+ 
 
   const bathroom = {
     image:
       "http://costfinder.consdeployer.com/assets/roomselection/bathroom.png",
-    title: ` Bathroom ${count + 1}`,
+    title: ` Bathroom ${bathroomQuantity + 1}`,
     number: "1",
   };
 
@@ -41,19 +31,16 @@ const Bathroom = () => {
                 <button
                   className="btn bg-primary"
                   onClick={() => {
-                    dispatch(bathroomDecrement(count));
-                    decrement();
+                    dispatch(bathroomDecrement());
                   }}
                 >
                   -
                 </button>
-                <Form.Control placeholder={count} />
+                <Form.Control placeholder={bathroomQuantity} />
                 <button
                   className=" btn bg-primary"
                   onClick={() => {
                     dispatch(bathroomIncrement(bathroom));
-                    console.log(bathroom);
-                    increment();
                   }}
                 >
                   +
