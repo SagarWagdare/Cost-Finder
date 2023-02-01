@@ -50,13 +50,16 @@ export const HouseSlice = createSlice({
 
 
     totalExpense: (state, action) => {
+      
       state.totalCost = action.payload;
     },
 
     flooringPrice: (state, action) => {
+
+
       state.house.map((room) => {
         if (room.id === action.payload.roomID) {
-          room.floorCost = action.payload.floors.cost;
+          return room.floorCost = action.payload.floors.cost;
         }
       })
     },
@@ -64,7 +67,7 @@ export const HouseSlice = createSlice({
     wallsdesigningPrice: (state, action) => {
       state.house.map((room) => {
         if (room.id === action.payload.roomID) {
-          room.wallCost = action.payload.walls.cost;
+        return  room.wallCost = action.payload.walls.cost;
         }
       })
     },

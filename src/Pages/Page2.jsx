@@ -35,7 +35,7 @@ const Page2 = () => {
     dispatch(setID());
     dispatch(totalExpense(totalPrice));
   }, [totalPrice]);
-  console.log(totalPrice);
+
   return (
     <>
       <section className="my-5">

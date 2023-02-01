@@ -3,7 +3,7 @@ import { Card, Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { wallsdesigningPrice } from "../redux/reducer";
 
-const Walls = (roomID) => {
+const Walls = ({roomID}) => {
 
   const [allwallsImg, setAllWallsImg] = useState(false);
  
