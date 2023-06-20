@@ -7,4 +7,4 @@ Welcome to the World of CostFinder where you can calculate overall cost Estimate
 
 Owner: Sagar@appsdeployer (https://github.com/Sagar-appsdeployer)
 
-Netlify-(https://cost-finder-sagar.netlify.app/)
+Netlify-(https://cost-finder.netlify.app/)
